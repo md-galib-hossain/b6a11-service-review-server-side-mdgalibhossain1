@@ -3,36 +3,42 @@
     "serviceid": 1,
     "servicename": "Wedding Photography",
     "servicedetails": "And purpose resonates. Sincere core values are key to connecting with real people in a digital first society",
-    "serviceurl": "https://i.ibb.co/825WhzY/1.png"
+    "serviceurl": "https://i.ibb.co/825WhzY/1.png",
+    "serviceprice": 49
   },
   {
     "serviceid": 2,
     "servicename": "Newborn Photo Shoot",
     "servicedetails": "And purpose resonates. Sincere core values are key to connecting with real people in a digital first society",
-    "serviceurl": "https://i.ibb.co/0FGRLBp/2.png"
+    "serviceurl": "https://i.ibb.co/0FGRLBp/2.png",
+    "serviceprice": 42
   },
   {
     "serviceid": 3,
     "servicename": "Photo Booth",
     "servicedetails": "And purpose resonates. Sincere core values are key to connecting with real people in a digital first society",
-    "serviceurl": "https://i.ibb.co/Jxh0p2s/3.png"
+    "serviceurl": "https://i.ibb.co/Jxh0p2s/3.png",
+    "serviceprice": 47
   },
   {
     "serviceid": 4,
     "servicename": "Color Correction",
     "servicedetails": "And purpose resonates. Sincere core values are key to connecting with real people in a digital first society",
-    "serviceurl": "https://i.ibb.co/3TG5Xf2/4.png"
+    "serviceurl": "https://i.ibb.co/3TG5Xf2/4.png",
+    "serviceprice": 15
   },
   {
     "serviceid": 5,
     "servicename": "Drone Recording",
     "servicedetails": "And purpose resonates. Sincere core values are key to connecting with real people in a digital first society",
-    "serviceurl": "https://i.ibb.co/p4QPzj1/5.png"
+    "serviceurl": "https://i.ibb.co/p4QPzj1/5.png",
+    "serviceprice": 79
   },
   {
     "serviceid": 6,
     "servicename": "Model Direction",
     "servicedetails": "And purpose resonates. Sincere core values are key to connecting with real people in a digital first society",
-    "serviceurl": "https://i.ibb.co/HqgWZ2y/6.png"
+    "serviceurl": "https://i.ibb.co/HqgWZ2y/6.png",
+    "serviceprice": 25
   }
 ]
