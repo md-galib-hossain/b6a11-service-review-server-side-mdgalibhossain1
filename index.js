@@ -62,8 +62,8 @@ async function run() {
     // load all reviews
     app.get("/reviews/:id", async (req, res) => {
       const id = parseInt(req.params.id);
-
-      const cursor = reviewsCollection.find({ serviceid: id });
+      const mysort = { reviewdate: 1 };
+      const cursor = reviewsCollection.find({ serviceid: id }).sort(mysort);
       const reviews = await cursor.toArray();
       console.log;
       res.send(reviews);
@@ -72,6 +72,12 @@ async function run() {
     app.post("/reviews", async (req, res) => {
       const review = req.body;
       const result = await reviewsCollection.insertOne(review);
+      res.send(result);
+    });
+    // add service
+    app.post("/addservice", async (req, res) => {
+      const service = req.body;
+      const result = await servicesCollection.insertOne(service);
       res.send(result);
     });
   } finally {
