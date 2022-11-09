@@ -6,8 +6,11 @@ require("dotenv").config();
 const port = process.env.PORT || 5000;
 const services = require("./services.json");
 
+// middleware
 app.use(cors());
 app.use(express.json());
+
+// getting data
 app.get("/services", (req, res) => {
   res.send(services);
 });
