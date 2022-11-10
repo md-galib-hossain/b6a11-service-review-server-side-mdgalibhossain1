@@ -80,6 +80,14 @@ async function run() {
       const result = await servicesCollection.insertOne(service);
       res.send(result);
     });
+    // load my reviews
+    app.get("/myreviews/:id", async (req, res) => {
+      const id = req.params.id;
+
+      const cursor = reviewsCollection.find({ reviewemail: id });
+      const myreviews = await cursor.toArray();
+      res.send(myreviews);
+    });
   } finally {
   }
 }
