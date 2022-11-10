@@ -1,6 +1,7 @@
 const express = require("express");
+const jwt = require("jsonwebtoken");
 const app = express();
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const cors = require("cors");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
@@ -34,6 +35,12 @@ async function run() {
     const reviewsCollection = client
       .db("photography-service")
       .collection("reviews");
+
+    // jwt api
+    app.post("/jwt", (req, res) => {
+      const user = req.body;
+      console.log(user);
+    });
     // load limited services
 
     app.get("/services", async (req, res) => {
@@ -87,6 +94,31 @@ async function run() {
       const cursor = reviewsCollection.find({ reviewemail: id });
       const myreviews = await cursor.toArray();
       res.send(myreviews);
+    });
+    // load single review
+    app.get("/singlereview/:id", async (req, res) => {
+      const id = req.params.id;
+      const objectreview = await reviewsCollection.findOne({
+        _id: ObjectId(id),
+      });
+
+      res.send(objectreview);
+    });
+    // update review
+    app.put("/updatereview/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: ObjectId(id) };
+
+      const review = req.body;
+      const details = review.reviewdetails;
+      console.log(details);
+      const updatedreview = {
+        $set: {
+          reviewdetails: details,
+        },
+      };
+      const result = await reviewsCollection.updateOne(filter, updatedreview);
+      res.send(result);
     });
   } finally {
   }
